@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.xuz.myproject</groupId>
+        <artifactId>spc-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../spc-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.xuz.myproject</groupId>
+    <artifactId>spc-basic-business-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spc-basic-business-service</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.xuz.myproject</groupId>
+            <artifactId>spc-base-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

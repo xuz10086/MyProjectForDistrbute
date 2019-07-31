@@ -1,0 +1,18 @@
+server:
+  port: 3331
+
+spring:
+  application:
+    name: feign-consumer-basic-business
+  devtools:
+    restart:
+      enabled: true
+
+ribbon:
+  ReadTimeout: 6000
+  ConnectionTimeout: 6000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
