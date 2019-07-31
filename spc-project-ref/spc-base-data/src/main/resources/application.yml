@@ -1,0 +1,38 @@
+#server:
+#  port: 3331
+#
+#spring:
+#  application:
+#    name: spc-data
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/     # 指定注册中心地址
+#  instance:
+#    preferIpAdress:
+#      instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#
+#mysql:
+#  datasource:
+#    # DB1
+#    db1:
+#      url: jdbc:mysql://localhost:53306/XUZ_DEMO?useUnicode=true&characterEncoding=utf-8
+#      username: root
+#      password: 123456
+#      minPoolSize: 3
+#      maxPoolSize: 25
+#      maxLifetime: 20000
+#      borrowConnectionTimeout: 30
+#      loginTimeout: 30
+#      maintenanceInterval: 60
+#      maxIdleTime: 60
+#      testQuery: select 1
+
+## mybatis配置
+#mybatis:
+#  type-aliases-package: com.xuz.myproject.spcbasedata.mapper.db1.*
+#  mapper-locations: classpath:db1-mapper/*.xml
+#  # 表字段映射
+#  configuration:
+#    map-underscore-to-camel-case: true
