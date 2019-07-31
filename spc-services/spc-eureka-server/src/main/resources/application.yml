@@ -1,0 +1,14 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: eureka-server
+# 默认下，该服务中心(DemoApplication)会将自己作为客户端注册它自己，这里我们禁止这种注册行为
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # 不向注册中心注册自己
+    fetch-registry: false  # 该注册中心的职责为维护服务实例，所以取消该注册中心的检索服务
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

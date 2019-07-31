@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.xuz.services</groupId>
+        <artifactId>spc-services-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../spc-services-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.xuz.services</groupId>
+    <artifactId>spc-activemq</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spc-activemq</name>
+    <description>ActiveMq</description>
+
+    <dependencies>
+        <!-- 集成发送邮件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xuz.myproject</groupId>
+            <artifactId>spc-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

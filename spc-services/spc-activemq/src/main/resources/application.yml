@@ -1,0 +1,33 @@
+server:
+  port: 1112
+
+spring:
+  application:
+    name: messages_activemq
+  activemq:
+    broker-url: tcp://localhost:61617
+    in-memory: true
+    pool:
+      enabled: false
+  mail:
+    host: smtp.163.com
+    username: xz429547670@163.com
+    password: xuz123
+    enable:  true
+    smtp:
+      auth: true
+    starttls:
+      enable: true
+      required: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+
+########################################
+
+msg:
+  subject: 恭喜你荣获测试资格
+  content: 恭喜您的账户{},注册成功!开心拉！
