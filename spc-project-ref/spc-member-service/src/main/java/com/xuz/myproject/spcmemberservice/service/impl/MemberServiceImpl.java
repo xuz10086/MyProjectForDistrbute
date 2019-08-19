@@ -52,6 +52,13 @@ public class MemberServiceImpl implements MemberService {
         return JsonResultFactory.setResultSuccess(loginToke);
     }
 
+    /**
+     * 用户注册
+     *
+     * @param userDO
+     * @return com.xuz.myproject.base.JsonResult
+     * @author xuz
+     */
     @Override
     public JsonResult regist(@RequestBody UserDO userDO) {
         //1. 注册用户
