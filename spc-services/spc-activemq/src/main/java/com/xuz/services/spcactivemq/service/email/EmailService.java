@@ -1,4 +1,4 @@
-package com.xuz.services.spcactivemq.email.service;
+package com.xuz.services.spcactivemq.service.email;
 
 import com.xuz.services.spcactivemq.adapter.MessageAdapter;
 import org.apache.commons.lang.StringUtils;

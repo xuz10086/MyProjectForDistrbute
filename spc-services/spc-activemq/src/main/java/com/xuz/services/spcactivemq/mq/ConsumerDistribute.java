@@ -2,7 +2,7 @@ package com.xuz.services.spcactivemq.mq;
 
 import com.xuz.myproject.constants.Constants;
 import com.xuz.services.spcactivemq.adapter.MessageAdapter;
-import com.xuz.services.spcactivemq.email.service.EmailService;
+import com.xuz.services.spcactivemq.service.email.EmailService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
