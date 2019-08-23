@@ -1,0 +1,9 @@
+Port Use:
+
+eureka-server : 1111
+active-mq : 1112
+rabbit-mq : 1113
+basic-business-service : 2221
+member-service : 2222
+basic-business-web : 3331
+member-web : 3332
