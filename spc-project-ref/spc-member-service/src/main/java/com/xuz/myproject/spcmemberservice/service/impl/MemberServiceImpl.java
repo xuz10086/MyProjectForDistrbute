@@ -6,8 +6,9 @@ import com.xuz.myproject.base.JsonResultFactory;
 import com.xuz.myproject.constants.Constants;
 import com.xuz.myproject.spcbaseapi.service.MemberService;
 import com.xuz.myproject.spcbasedomain.db1.pojo.dao.UserDO;
-import com.xuz.myproject.spcbaseservice.mq.ActiveMqProducer;
 import com.xuz.myproject.spcbaseservice.service.api.UserBaseService;
+import com.xuz.myproject.spcmemberservice.mq.ActiveMqProducer;
+import com.xuz.myproject.spcmemberservice.mq.RabbitMqPoducer;
 import com.xuz.myproject.utils.RedisUtil;
 import com.xuz.myproject.utils.TokenUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,9 @@ public class MemberServiceImpl implements MemberService {
     @Value("${email.messages.queue}")
     private String MESSAGESQUEUE;
     @Autowired
-    private ActiveMqProducer registerMailboxProducer;
+    private ActiveMqProducer activeMqProducer;
+    @Autowired
+    private RabbitMqPoducer rabbitMqPoducer;
 
     /**
      * 用户登陆
@@ -71,23 +74,36 @@ public class MemberServiceImpl implements MemberService {
         String json = emailJson(email);
         //2.3 推送消息到消息服务平台
         log.info("####会员服务推送消息到消息服务平台####json:{}", json);
-        sendMsg(json);
+        sendMsgToAcitveMq(json);
+        sendMsgToRabbitMq(json);
 
         return JsonResultFactory.setResultSuccess("注册成功！");
     }
 
     /**
-     * 推送消息到消息服务平台
+     * 推送消息到消息服务平台(ActiveMq)
      *
      * @param json
      * @return void
      * @author xuz
      * @date 2019/7/31 10:00 AM
      */
-    private void sendMsg(String json) {
+    private void sendMsgToAcitveMq(String json) {
         ActiveMQQueue activeMQQueue = new ActiveMQQueue(MESSAGESQUEUE);
-        registerMailboxProducer.sendMsg(activeMQQueue, json);
+        activeMqProducer.sendMsg(activeMQQueue, json);
     }
+
+    /**
+     * 推送消息到消息服务平台(RabbitMq)
+     *
+     * @param json
+     * @return void
+     * @author xuz
+     */
+    private void sendMsgToRabbitMq(String json) {
+        rabbitMqPoducer.sendMail(MESSAGESQUEUE, json);
+    }
+
 
     /**
      * 发送信息参数设置

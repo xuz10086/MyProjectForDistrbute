@@ -1,0 +1,38 @@
+server:
+  port: 1113
+
+spring:
+  application:
+    name: messages_rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+  mail:
+    host: smtp.163.com
+    username: xz429547670@163.com
+    password: xuz123
+    enable:  true
+    smtp:
+      auth: true
+    starttls:
+      enable: true
+      required: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+
+########################################
+# 队列
+email:
+  messages:
+    queue: messages_queue_01
+    topic: Topic_01
+
+msg:
+  subject: 恭喜你荣获测试资格
+  content: 恭喜您的账户{},注册成功!开心拉！

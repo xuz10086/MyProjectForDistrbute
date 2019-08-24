@@ -44,6 +44,11 @@ spring:
       enabled: true
       max-connections: 5
       reconnect-on-exception: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
 
 eureka:
   client:

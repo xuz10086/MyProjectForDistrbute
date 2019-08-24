@@ -1,4 +1,4 @@
-package com.xuz.myproject.spcbaseservice.mq;
+package com.xuz.myproject.spcmemberservice.mq;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;

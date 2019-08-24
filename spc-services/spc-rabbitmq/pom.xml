@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.xuz.myproject</groupId>
-        <artifactId>spc-parent</artifactId>
+        <groupId>com.xuz.services</groupId>
+        <artifactId>spc-services-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../spc-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
+        <relativePath>../spc-services-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.xuz.myproject</groupId>
-    <artifactId>spc-member-service</artifactId>
+    <groupId>com.xuz.services</groupId>
+    <artifactId>spc-rabbitmq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spc-member-service</name>
+    <name>spc-rabbitmq</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
-        <!-- springboot整合activemq -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
-
-        <!--整合rabbitmq-->
+        <!-- springboot整合rabbitmq -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <!-- 集成发送邮件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.xuz.myproject</groupId>
-            <artifactId>spc-base-service</artifactId>
+            <artifactId>spc-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -40,9 +40,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
         </plugins>
     </build>
-
-
 </project>
